@@ -20,7 +20,7 @@ Vous pouvez installer toutes les bibliothèques mentionnées ci-dessus en exécu
 
 ```sh
 pip install -r requirements.txt
-
+```sh
 <!-- POUR COMMENCER -->
 ## Pour Commencer
 
