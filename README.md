@@ -3,7 +3,6 @@
 Ce dépôt contient un script Python qui utilise divers modèles d'apprentissage automatique pour classifier les messages spam des messages ham. Le modèle est entraîné sur un dataset populaire d'emails spam et nous utilisons plusieurs modèles d'apprentissage automatique pour la classification.
 
 
-<!-- À PROPOS DU PROJET -->
 ## À propos du Projet
 
 La détection de spam est le processus d'identification et de filtrage des messages indésirables ou non sollicités, typiquement sous forme d'emails ou de messages texte. Ces messages sont souvent envoyés par des spammeurs ou des acteurs malveillants dans le but de promouvoir un produit, un service ou un site web, ou de tromper le destinataire pour obtenir des informations personnelles ou télécharger des logiciels malveillants. La détection de spam implique généralement l'utilisation d'algorithmes d'apprentissage automatique qui peuvent analyser le contenu des messages et identifier des motifs ou caractéristiques communément associés au spam. Ces algorithmes peuvent être entraînés sur de grands ensembles de données étiquetés d'exemples de spam et de messages légitimes, leur permettant d'apprendre à distinguer les deux avec un haut degré de précision. Une détection efficace du spam est une tâche importante pour les individus et les organisations, car elle peut aider à prévenir l'encombrement des boîtes de réception par des messages indésirables, réduire le risque d'attaques de phishing et améliorer la cybersécurité globale.
@@ -18,10 +17,9 @@ La détection de spam est le processus d'identification et de filtrage des messa
 
 Vous pouvez installer toutes les bibliothèques mentionnées ci-dessus en exécutant la commande suivante :
 
-```sh
-pip install -r requirements.txt
-```sh
-<!-- POUR COMMENCER -->
+    pip install -r requirements.txt
+    
+
 ## Pour Commencer
 
 Ceci vous aidera à comprendre comment vous pouvez donner des instructions pour configurer votre projet localement. Pour obtenir une copie locale opérationnelle, suivez ces simples étapes d'exemple.
@@ -66,7 +64,7 @@ Le fichier ```Spam Classification Deployment.py``` contient le code complet pour
 
 Pour exécuter le fichier Deployment.py, exécutez la commande suivante dans votre invite de commande
 
- ```sh
+
     python Spam Classification Deployment.py
 
 
