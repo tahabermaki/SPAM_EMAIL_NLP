@@ -1,4 +1,4 @@
-# Détection de Spam par Email avec l'Apprentissage Automatique
+# Détection de Spam par Email avec Machine Learning
 
 Ce dépôt contient un script Python qui utilise divers modèles d'apprentissage automatique pour classifier les messages spam des messages ham. Le modèle est entraîné sur un dataset populaire d'emails spam et nous utilisons plusieurs modèles d'apprentissage automatique pour la classification.
 
