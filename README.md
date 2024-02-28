@@ -2,31 +2,6 @@
 
 Ce dépôt contient un script Python qui utilise divers modèles d'apprentissage automatique pour classifier les messages spam des messages ham. Le modèle est entraîné sur un dataset populaire d'emails spam et nous utilisons plusieurs modèles d'apprentissage automatique pour la classification.
 
-<!-- TABLE DES MATIÈRES -->
-<details>
-  <summary><h2 style="display: inline-block">Table des Matières</h2></summary>
-  <ol>
-    <li>
-      <a href="#à-propos-du-projet">À propos du Projet</a>
-      <ul>
-        <li><a href="#construit-avec">Construit Avec</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#pour-commencer">Pour Commencer</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#description-des-données">Description des Données</a></li>
-    <li><a href="#prétraitement-des-données">Prétraitement des Données</a></li>
-    <li><a href="#entraînement-et-évaluation-du-modèle">Entraînement et Évaluation du Modèle</a></li>
-    <li><a href="#déploiement-du-modèle">Déploiement du Modèle</a></li>
-    <li><a href="#contribuer">Contribuer</a></li>
-    <li><a href="#licence">Licence</a></li>
-    <li><a href="#remerciements">Remerciements</a></li>
-  </ol>
-</details>
 
 <!-- À PROPOS DU PROJET -->
 ## À propos du Projet
