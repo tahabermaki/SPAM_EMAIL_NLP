@@ -1,157 +1,100 @@
-# Spam Email Detection using Machine Learning 
+# Détection de Spam par Email avec l'Apprentissage Automatique
 
-<a href="https://medium.com/@kalyanmurapaka274/spam-e-mail-classification-using-machine-learning-caf5653e58e1">Visit my Blog on Medium</a>
-<br><br>
-<a href="https://ijrpr.com/uploads/V3ISSUE11/IJRPR7780.pdf">Visit my Research Paper</a> 
+Ce dépôt contient un script Python qui utilise divers modèles d'apprentissage automatique pour classifier les messages spam des messages ham. Le modèle est entraîné sur un dataset populaire d'emails spam et nous utilisons plusieurs modèles d'apprentissage automatique pour la classification.
 
-<!-- TABLE OF CONTENTS -->
+<!-- TABLE DES MATIÈRES -->
 <details>
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <summary><h2 style="display: inline-block">Table des Matières</h2></summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#à-propos-du-projet">À propos du Projet</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#construit-avec">Construit Avec</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#pour-commencer">Pour Commencer</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#data-Description">Data Description</a></li>
-    <li><a href="#data-Pre-processing">Data Pre-processing</a></li>
-    <li><a href="#model-Training-and-Evaluation">Model Training and Evaluation</a></li>
-    <li><a href="#model-Deployment">Model Deployment</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#description-des-données">Description des Données</a></li>
+    <li><a href="#prétraitement-des-données">Prétraitement des Données</a></li>
+    <li><a href="#entraînement-et-évaluation-du-modèle">Entraînement et Évaluation du Modèle</a></li>
+    <li><a href="#déploiement-du-modèle">Déploiement du Modèle</a></li>
+    <li><a href="#contribuer">Contribuer</a></li>
+    <li><a href="#licence">Licence</a></li>
+    <li><a href="#remerciements">Remerciements</a></li>
   </ol>
 </details>
 
+<!-- À PROPOS DU PROJET -->
+## À propos du Projet
 
+La détection de spam est le processus d'identification et de filtrage des messages indésirables ou non sollicités, typiquement sous forme d'emails ou de messages texte. Ces messages sont souvent envoyés par des spammeurs ou des acteurs malveillants dans le but de promouvoir un produit, un service ou un site web, ou de tromper le destinataire pour obtenir des informations personnelles ou télécharger des logiciels malveillants. La détection de spam implique généralement l'utilisation d'algorithmes d'apprentissage automatique qui peuvent analyser le contenu des messages et identifier des motifs ou caractéristiques communément associés au spam. Ces algorithmes peuvent être entraînés sur de grands ensembles de données étiquetés d'exemples de spam et de messages légitimes, leur permettant d'apprendre à distinguer les deux avec un haut degré de précision. Une détection efficace du spam est une tâche importante pour les individus et les organisations, car elle peut aider à prévenir l'encombrement des boîtes de réception par des messages indésirables, réduire le risque d'attaques de phishing et améliorer la cybersécurité globale.
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-Spam detection is the process of identifying and filtering out unwanted or unsolicited messages, typically in the form of emails or text messages. These messages are often sent by spammers or malicious actors with the intent of promoting a product, service, or website, or to trick the recipient into providing personal information or downloading malware. Spam detection typically involves the use of machine learning algorithms that can analyze the content of messages and identify patterns or characteristics that are commonly associated with spam. These algorithms can be trained on large datasets of labeled examples of spam and legitimate messages, allowing them to learn to distinguish between the two with a high degree of accuracy. Effective spam detection is an important task for both individuals and organizations, as it can help to prevent unwanted messages from cluttering inboxes, reduce the risk of phishing attacks, and improve overall cybersecurity.
-
-This repository contains a Python script that uses various machine learning models to classify spam messages from ham messages. The model is trained on a Popular dataset of Spam emails and we use multiple machine learning models for classification.
-
-### Built With
+### Construit Avec
 
  - NumPy
- 
  - Pandas
-
  - Matplotlib
-
  - Seaborn
-
  - Sklearn
- 
- <br>
- 
- Anyways you can install all the above mentioned libraries at a glance by executing the following command:
- 
-  ```sh
-  pip install -r requirements.txt
-  ```
 
-<!-- GETTING STARTED -->
-## Getting Started
+Vous pouvez installer toutes les bibliothèques mentionnées ci-dessus en exécutant la commande suivante :
 
-This is make you understand how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+```sh
+pip install -r requirements.txt
 
-### Installation
+<!-- POUR COMMENCER -->
+## Pour Commencer
 
-1. Clone the repo
+Ceci vous aidera à comprendre comment vous pouvez donner des instructions pour configurer votre projet localement. Pour obtenir une copie locale opérationnelle, suivez ces simples étapes d'exemple.
 
-   ```sh
-   git clone https://github.com/KalyanMurapaka45/Spam-Email-Detection.git
-   ```
-2. Install the required libraries
+# Description du Dataset
 
-   ```sh
-    pip install -r requirements.txt
-   ```
-3. Open and execute ```.ipynb``` file (After complete Execution you will get a ```.pkl``` file for project Deployment
+Nous avons utilisé le dataset Email-Spam, disponible publiquement sur Kaggle. Le dataset comprend une collection de 5 572 emails, chacun ayant deux caractéristiques : Catégorie et Message.
 
-# Dataset Description
+`Message`   La caractéristique Message contient le texte réel de l'email.
 
-We have utilized the Email-Spam dataset, which is publicly available on Kaggle. The dataset comprises a collection of 5,572 emails, each having two features: Category and Message. 
+`Catégorie`  La caractéristique Catégorie distingue les emails Spam des emails Ham.
 
-```Message```   Message feature contains the actual text of the email. 
+# Prétraitement des Données
 
-```Category```  The Category feature distinguishes between Spam and Ham emails
+### Étapes Réalisées :
 
-# Data Pre-processing
+- Les colonnes Unnamed: 2, Unnamed: 3, et Unnamed: 4 sont supprimées.
 
-### Steps Done:
+- La colonne Catégorie est convertie en valeurs binaires.
 
-- The Unnamed: 2, Unnamed: 3, and Unnamed: 4 columns are dropped.
+- Le dataset est divisé en ensembles d'entraînement et de test en utilisant la fonction train_test_split() de sklearn.model_selection.
 
-- The Category column is converted to binary values.
+- Les emails sont transformés en caractéristiques numériques en utilisant la fonction TfidfVectorizer() de sklearn.feature_extraction.text.
 
-- The dataset is split into training and testing sets using train_test_split() function from sklearn.model_selection.
+Initialement, les colonnes 'Unnamed: 2', 'Unnamed: 3', et 'Unnamed: 4' sont ensuite supprimées du DataFrame et le code vérifie l'existence de valeurs nulles dans le DataFrame en utilisant la méthode 'isnull()'. La colonne 'Catégorie' dans le DataFrame est alors convertie en valeurs numériques (0 et 1) où 'spam' est remplacé par 0 et 'ham' est remplacé par 1. Le nombre de valeurs dans chaque catégorie est imprimé en utilisant la méthode 'value_counts()'. Les variables X et Y sont ensuite créées où X stocke la colonne 'Message' du DataFrame, et Y stocke la colonne 'Catégorie'. Le code divise ensuite les données en ensembles d'entraînement et de test en utilisant la méthode 'train_test_split()' de la bibliothèque scikit-learn. Le TfidfVectorizer est ensuite utilisé pour extraire des caractéristiques à partir des données textuelles. Le paramètre 'min_df' est fixé à 1, le paramètre 'stop_words' est fixé à 'english', et le paramètre 'lowercase' est fixé à 'True'. L'extraction des caractéristiques est réalisée sur les données d'entraînement et de test en utilisant les méthodes 'fit_transform()' et 'transform()'. Finalement, les variables 'Y_train' et 'Y_test' sont converties en entiers.
 
-- The emails are transformed into numerical features using the TfidfVectorizer() function from sklearn.feature_extraction.text.
-<br>
+# Entraînement et Évaluation du Modèle
 
+Comme nous avons déjà divisé le dataset en parties d'entraînement et de test, les modèles d'apprentissage automatique peuvent être entraînés sur les données d'entraînement en utilisant la méthode ```fit()``` puis nous testons le modèle d'apprentissage automatique entraîné en utilisant la méthode ```predict()```. Pour connaître la performance des modèles d'apprentissage automatique entraînés, nous évaluons les données prédites et les données originales en utilisant des métriques d'évaluation telles que la précision, la précision, le rappel et le score F1.
 
-Intially the 'Unnamed: 2', 'Unnamed: 3', and 'Unnamed: 4' columns are then dropped from the DataFrame and the code checks for null values in the DataFrame using the 'isnull()' method. The 'Category' column in the DataFrame is then converted to numerical values (0 and 1) where 'spam' is replaced with 0 and 'ham' is replaced with 1.
-The number of values in each category is printed using the 'value_counts()' method. The X and Y variables are then created where X stores the 'Message' column of the DataFrame, and Y stores the 'Category' column. The code then splits the data into training and testing sets using the 'train_test_split()' method from the scikit-learn library. The TfidfVectorizer is then used to extract features from the text data. The 'min_df' parameter is set to 1, the 'stop_words' parameter is set to 'english', and the 'lowercase' parameter is set to 'True'. The feature extraction is performed on both the training and testing data using the 'fit_transform()' and 'transform()' methods.
-Finally, the 'Y_train' and 'Y_test' variables are converted to integers.
+Les algorithmes d'apprentissage automatique suivants sont utilisés :
 
-# Model Training and Evaluation
+- Régression Logistique
+- K Plus Proches Voisins
+- Arbres de Décision
+- Forêt Aléatoire
+- Modèle de Stacking
 
-As we already splitted the dataset into training and testing parts, the machine learning models can be able to train on the training data by using ```fit()``` method and then we are testing the trained machine learning model by using ```predict()``` method. To know the performance of the  trained machine learning models we are evaluating the predicted data and original data by using evaluation metrics such as accuracy, precision, recall, and F1-score.
+# Déploiement du Modèle
 
-The following Machine Learning Algorithms are used:
+Le fichier ```Spam Classification Deployment.py``` contient le code complet pour le déploiement qui est déployé dans Streamlit. Streamlit est une bibliothèque Python open-source qui vous permet de créer des applications web interactives pour les projets de machine learning et de science des données.
 
-- Logistic Regression
-- K Nearest Neighbors
-- Decision Trees
-- Random Forest
-- Stacking model
-
-# Model Deployment
-
-The file ```Spam Classification Deployment.py``` contains the complete code for deployment which is deployed in Streamlit. Streamlit is an open-source Python library that allows you to create interactive web applications for machine learning and data science projects.
-
-To run the Deployment.py file, Execute the following Command in your command prompt
+Pour exécuter le fichier Deployment.py, exécutez la commande suivante dans votre invite de commande
 
  ```sh
     python Spam Classification Deployment.py
-  ```
-  
-![logo](https://github.com/KalyanMurapaka45/Spam-Email-Detection/blob/main/Data%20Source/deployment.png)
-<!-- CONTRIBUTING -->
-
-# Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch 
-3. Commit your Changes 
-4. Push to the Branch 
-5. Open a Pull Request
-
-<!-- LICENSE -->
-# License
-
-Distributed under the GNU General Public License v3.0. See `LICENSE.txt` for more information.
-
-# Acknowledgements
-
-This project was inspired by the Kaggle dataset on Spam Email Detection and the corresponding competition. We also acknowledge the open-source Python libraries used in this project and their contributors.
 
 
+# Remerciements
 
-
+Ce projet a été inspiré par le dataset Kaggle sur la détection d'emails spam et la compétition correspondante. Je reconnais également les bibliothèques Python open-source utilisées dans ce projet et leurs contributeurs.
